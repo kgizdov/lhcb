@@ -44,22 +44,22 @@ LoKi_Photos.Variables = {
     "MC_ETA"   : "MCETA",
     "MC_PHI"   : "MCPHI",
     "MC_ABSID" : "MCABSID"
-	}
+    }
 
 mctuple_B2Kmumu = MCDecayTreeTuple( 'MCTuple_B2Kmumu' )
 mctuple_B2Kmumu.Decay = "[ (Beauty & LongLived) --> ^(J/psi(1S) -> ^mu+ ^mu- ...) ^K+ ... ]CC"
 mctuple_B2Kmumu.Branches = {
-		'B'       : "[ (Beauty & LongLived) --> ^(J/psi(1S) ->  mu+  mu- ...)  K+  ... ]CC",
-		'Kplus'   : "[ (Beauty & LongLived) --> ^(J/psi(1S) ->  mu+  mu- ...) ^K+  ... ]CC",
-		'psi'     : "[ (Beauty & LongLived) --> ^(J/psi(1S) ->  mu+  mu- ...)  K+  ... ]CC",
-		'muplus'  : "[ (Beauty & LongLived) --> ^(J/psi(1S) -> ^mu+  mu- ...)  K+  ... ]CC",
-		'muminus' : "[ (Beauty & LongLived) --> ^(J/psi(1S) ->  mu+ ^mu- ...)  K+  ... ]CC",
-		}
+        'B'       : "[ (Beauty & LongLived) --> ^(J/psi(1S) ->  mu+  mu- ...)  K+  ... ]CC",
+        'Kplus'   : "[ (Beauty & LongLived) --> ^(J/psi(1S) ->  mu+  mu- ...) ^K+  ... ]CC",
+        'psi'     : "[ (Beauty & LongLived) --> ^(J/psi(1S) ->  mu+  mu- ...)  K+  ... ]CC",
+        'muplus'  : "[ (Beauty & LongLived) --> ^(J/psi(1S) -> ^mu+  mu- ...)  K+  ... ]CC",
+        'muminus' : "[ (Beauty & LongLived) --> ^(J/psi(1S) ->  mu+ ^mu- ...)  K+  ... ]CC",
+        }
 
 # List of the mc tuples
 mctuples = [
         mctuple_B2Kmumu
-	]
+    ]
 
 for tup in mctuples:
     tup.addTool(MCTupleToolKinematic())
@@ -75,12 +75,12 @@ for tup in mctuples:
     tup.ToolList += ["TupleToolMCBackgroundInfo/BackgroundInfo"]
 
 if OUTPUTLEVEL == DEBUG:
-	from Configurables import PrintMCTree, PrintMCDecayTreeTool
-	mctree = PrintMCTree("PrintTrue")
-	mctree.addTool( PrintMCDecayTreeTool )
-	mctree.PrintMCDecayTreeTool.Information = "Name M P Px Py Pz Pt Vx Vy Vz"
-	mctree.ParticleNames = [ "B+", "B-" ]
-	mctree.Depth = 3  # down to the K and mu
+    from Configurables import PrintMCTree, PrintMCDecayTreeTool
+    mctree = PrintMCTree("PrintTrue")
+    mctree.addTool( PrintMCDecayTreeTool )
+    mctree.PrintMCDecayTreeTool.Information = "Name M P Px Py Pz Pt Vx Vy Vz"
+    mctree.ParticleNames = [ "B+", "B-" ]
+    mctree.Depth = 3  # down to the K and mu
 
 #########################################################################################################
 # Now set up the DecayTreeTuples for the reconstructed particles
@@ -94,47 +94,47 @@ tupletools.append("TupleToolPid")
 tupletools.append("TupleToolRecoStats")
 tupletools.append("TupleToolEventInfo")
 triglist = [
-	 "L0PhysicsDecision"
-	,"L0MuonDecision"
-	,"L0DiMuonDecision"
-	,"L0MuonHighDecision"
-	,"L0HadronDecision"
-	,"L0ElectronDecision"
-	,"L0PhotonDecision"
-	,"Hlt1DiMuonHighMassDecision"
-	,"Hlt1DiMuonLowMassDecision"
-	,"Hlt1SingleMuonNoIPDecision"
-	,"Hlt1SingleMuonHighPTDecision"
-	,"Hlt1TrackAllL0Decision"
-	,"Hlt1TrackMuonDecision"
-	,"Hlt1TrackPhotonDecision"
-	,"Hlt1L0AnyDecision"
-	,"Hlt2SingleElectronTFLowPtDecision"
-	,"Hlt2SingleElectronTFHighPtDecision"
-	,"Hlt2DiElectronHighMassDecision"
-	,"Hlt2DiElectronBDecision"
-	,"Hlt2B2HHLTUnbiasedDecision"
-	,"Hlt2Topo2BodySimpleDecision"
-	,"Hlt2Topo3BodySimpleDecision"
-	,"Hlt2Topo4BodySimpleDecision"
-	,"Hlt2Topo2BodyBBDTDecision"
-	,"Hlt2Topo3BodyBBDTDecision"
-	,"Hlt2Topo4BodyBBDTDecision"
-	,"Hlt2TopoMu2BodyBBDTDecision"
-	,"Hlt2TopoMu3BodyBBDTDecision"
-	,"Hlt2TopoMu4BodyBBDTDecision"
-	,"Hlt2TopoE2BodyBBDTDecision"
-	,"Hlt2TopoE3BodyBBDTDecision"
-	,"Hlt2TopoE4BodyBBDTDecision"
-	,"Hlt2MuonFromHLT1Decision"
-	,"Hlt2DiMuonDecision"
-	,"Hlt2DiMuonDetachedDecision"
-	,"Hlt2DiMuonDetachedHeavyDecision"
-	,"Hlt2DiMuonLowMassDecision"
-	,"Hlt2DiMuonJPsiDecision"
-	,"Hlt2DiMuonJPsiHighPTDecision"
-	,"Hlt2DiMuonPsi2SDecision"
-	,"Hlt2DiMuonBDecision"
+     "L0PhysicsDecision"
+    ,"L0MuonDecision"
+    ,"L0DiMuonDecision"
+    ,"L0MuonHighDecision"
+    ,"L0HadronDecision"
+    ,"L0ElectronDecision"
+    ,"L0PhotonDecision"
+    ,"Hlt1DiMuonHighMassDecision"
+    ,"Hlt1DiMuonLowMassDecision"
+    ,"Hlt1SingleMuonNoIPDecision"
+    ,"Hlt1SingleMuonHighPTDecision"
+    ,"Hlt1TrackAllL0Decision"
+    ,"Hlt1TrackMuonDecision"
+    ,"Hlt1TrackPhotonDecision"
+    ,"Hlt1L0AnyDecision"
+    ,"Hlt2SingleElectronTFLowPtDecision"
+    ,"Hlt2SingleElectronTFHighPtDecision"
+    ,"Hlt2DiElectronHighMassDecision"
+    ,"Hlt2DiElectronBDecision"
+    ,"Hlt2B2HHLTUnbiasedDecision"
+    ,"Hlt2Topo2BodySimpleDecision"
+    ,"Hlt2Topo3BodySimpleDecision"
+    ,"Hlt2Topo4BodySimpleDecision"
+    ,"Hlt2Topo2BodyBBDTDecision"
+    ,"Hlt2Topo3BodyBBDTDecision"
+    ,"Hlt2Topo4BodyBBDTDecision"
+    ,"Hlt2TopoMu2BodyBBDTDecision"
+    ,"Hlt2TopoMu3BodyBBDTDecision"
+    ,"Hlt2TopoMu4BodyBBDTDecision"
+    ,"Hlt2TopoE2BodyBBDTDecision"
+    ,"Hlt2TopoE3BodyBBDTDecision"
+    ,"Hlt2TopoE4BodyBBDTDecision"
+    ,"Hlt2MuonFromHLT1Decision"
+    ,"Hlt2DiMuonDecision"
+    ,"Hlt2DiMuonDetachedDecision"
+    ,"Hlt2DiMuonDetachedHeavyDecision"
+    ,"Hlt2DiMuonLowMassDecision"
+    ,"Hlt2DiMuonJPsiDecision"
+    ,"Hlt2DiMuonJPsiHighPTDecision"
+    ,"Hlt2DiMuonPsi2SDecision"
+    ,"Hlt2DiMuonBDecision"
 ]
 TISTOSTool = TupleToolTISTOS('TISTOSTool')
 TISTOSTool.VerboseL0   = True
@@ -183,13 +183,13 @@ tuple_B2Kmumu.Branches = {
         "psi"    : "[B+ -> ^(J/psi(1S) ->  mu+  mu-)  K+]CC",
         "muplus" : "[B+ ->  (J/psi(1S) -> ^mu+  mu-)  K+]CC",
         "muminus": "[B+ ->  (J/psi(1S) ->  mu+ ^mu-)  K+]CC",
-	}
+    }
 for particle in ["B", "Kplus", "psi", "muplus", "muminus"]:
         tuple_B2Kmumu.addTool(TupleToolDecay, name = particle)
 
 # List of the reconstructed tuples
 tuples = [ tuple_B2Kmumu
-	]
+    ]
 
 for tup in tuples:
     tup.ReFitPVs = True
@@ -226,7 +226,7 @@ SelDSTWriterConf = {
     'default'              : stripDSTStreamConf()
     }
 if MODE == 'MC':
-  dstWriter = SelDSTWriter( "MyDSTWriter",
+    dstWriter = SelDSTWriter( "MyDSTWriter",
                           StreamConf = SelDSTWriterConf,
                           MicroDSTElements = SelDSTWriterElements,
                           OutputFileSuffix ='MC',
@@ -246,21 +246,21 @@ DaVinci().DataType = "2012"
 CondDB( LatestGlobalTagByDataType = '2012' )
 
 if False: # Add the DST writing algorithms
-	DaVinci().appendToMainSequence( [ dstWriter.sequence(), printTree ] )
+    DaVinci().appendToMainSequence( [ dstWriter.sequence(), printTree ] )
 
 if True: # Add the ntuple writing algorithms
-	DaVinci().UserAlgorithms = [
+    DaVinci().UserAlgorithms = [
                 tuple_B2Kmumu
-			]
-	if MODE == 'MC':
+            ]
+    if MODE == 'MC':
         DaVinci().Simulation = True
         DaVinci().Lumi = False
-		DaVinci().UserAlgorithms += [
+        DaVinci().UserAlgorithms += [
                 mctuple_B2Kmumu
-			]
+            ]
 
 if OUTPUTLEVEL == DEBUG:
-	DaVinci().MoniSequence += [ mctree ]
+    DaVinci().MoniSequence += [ mctree ]
 
 from Configurables import DaVinciInit
 DaVinciInit().OutputLevel = OUTPUTLEVEL
