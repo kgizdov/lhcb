@@ -8,10 +8,10 @@ mode = sys.argv[2]
 job_name = 'B2Kll_'+ mode
 
 script = '/afs/cern.ch/user/k/kgizdov/lhcb/rd/MoM/python/DV_B2Kll_' + year + '.py'
-if   mode == 'DIMUON':
-    script = '/afs/cern.ch/user/k/kgizdov/lhcb/rd/MoM/python/BuKMuMu_data.py'
-elif mode == 'LEPTONIC':
-    script = '/afs/cern.ch/user/k/kgizdov/lhcb/rd/MoM/python/BuKee_data2.py'
+# if   mode == 'DIMUON':
+#     script = '/afs/cern.ch/user/k/kgizdov/lhcb/rd/MoM/python/BuKMuMu_data.py'
+# elif mode == 'LEPTONIC':
+#     script = '/afs/cern.ch/user/k/kgizdov/lhcb/rd/MoM/python/BuKee_data2.py'
 
 DV = DaVinci()
 DV.version = 'v37r2p2'
@@ -38,7 +38,7 @@ bk = BKQuery()
 for path in BK_locations:
 	bk.path = path
 	tmp = bk.getDataset()
-	print path, len(tmp.files), tmp.files[0].name
+	print path, len(tmp.files) #, tmp.files[0].name
 	if len(tmp.files) > 0:
 		data.extend( tmp )
 
