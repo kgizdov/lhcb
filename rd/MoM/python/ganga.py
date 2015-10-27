@@ -14,7 +14,7 @@ script = '/afs/cern.ch/user/k/kgizdov/lhcb/rd/MoM/python/DV_B2Kll_' + year + '.p
 #     script = '/afs/cern.ch/user/k/kgizdov/lhcb/rd/MoM/python/BuKee_data2.py'
 
 DV = DaVinci()
-DV.version = 'v37r2p2'
+DV.version = 'v37r2p4'
 DV.optsfile = [File(script)]
 DV.user_release_area = '/afs/cern.ch/user/k/kgizdov/cmtuser'
 
