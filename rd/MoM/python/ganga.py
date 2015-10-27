@@ -7,11 +7,11 @@ year = sys.argv[1]
 mode = sys.argv[2]
 job_name = 'B2Kll_'+ mode
 
-script = '/afs/cern.ch/user/k/kgizdov/lhcb/lhcb/rd/MoM/python/DV_B2Kll_' + year + '.py'
+script = '/afs/cern.ch/user/k/kgizdov/lhcb/rd/MoM/python/DV_B2Kll_' + year + '.py'
 if   mode == 'DIMUON':
-    script = '/afs/cern.ch/user/k/kgizdov/lhcb/lhcb/rd/MoM/python/BuKMuMu_data.py'
+    script = '/afs/cern.ch/user/k/kgizdov/lhcb/rd/MoM/python/BuKMuMu_data.py'
 elif mode == 'LEPTONIC':
-    script = '/afs/cern.ch/user/k/kgizdov/lhcb/lhcb/rd/MoM/python/BuKee_data2.py'
+    script = '/afs/cern.ch/user/k/kgizdov/lhcb/rd/MoM/python/BuKee_data2.py'
 
 DV = DaVinci()
 DV.version = 'v37r2p2'
